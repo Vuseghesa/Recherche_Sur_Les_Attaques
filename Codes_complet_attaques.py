@@ -224,12 +224,6 @@ print("Les noeuds pris aléatoirement sont au nombre de : ",nombre_noeuds )
 # In[ ]:
 
 
-print("Pourcentage noeud selectionnés : ",nombre_noeuds*100/97606)
-
-
-# In[ ]:
-
-
 indices_noeuds = random.sample(range(len(df)), nombre_noeuds)
 
 
