@@ -268,15 +268,20 @@ valeur_a_dupliquer = 29
 
 # Facteur de multiplication
 facteur_multiplicatif = 3
-for i in df.loc[indices_noeuds]:
+# updating the column value/data
+for i in df.iloc[indices_noeuds]:
+    #df['temp'] = df['temp'].replace({29: 27})
+    #df.loc[indices_noeuds, 'outside'] = df.loc[indices_noeuds, 'inside'].replace()
+    #df.loc[indices_noeuds, 'inside'] = df.loc[indices_noeuds, 'outside'].replace()
+    #df.loc[indices_noeuds, 'room_id/id'] = df.loc[indices_noeuds, 'out/in'].replace()
+    df.loc[indices_noeuds, 'temp'] = df.loc[indices_noeuds, 'temp'].replace({29: 15})
+    #df.loc[indices_noeuds, 'temp'] = df.loc[indices_noeuds, 'temp'].replace({41: ''})
+    #df.loc[indices_noeuds, 'out/in'] = df.loc[indices_noeuds, 'out/in'].replace({'In': 'Out'})
+    #df['temp'] = df['temp'].apply(lambda x: x * facteur_multiplicatif if x == valeur_a_dupliquer else x)
 
-    df['temp'] = df['temp'].apply(lambda x: x * facteur_multiplicatif if x == valeur_a_dupliquer else x)
-
-# Afficher le DataFrame mis à jour
-    
+# writing into the file
 df.to_csv("IOT_temp.csv", index=False)
 print(df)
-   
 
 
 # In[ ]:
